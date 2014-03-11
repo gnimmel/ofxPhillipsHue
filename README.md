@@ -13,5 +13,3 @@ jsoncpp
 Forked from https://github.com/benMcChesney/ofxPhillipsHue
 
 Can both set and get Philips Hue bulb properties
-
-Needs cleaning up
