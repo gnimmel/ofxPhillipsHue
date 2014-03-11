@@ -4,7 +4,9 @@ ofxPhilipsHue
 Open Frameworks addon to interface directly with the philips hue wi-fi lightbulb http://meethue.com/
 
 **Dependencies**
+
 jsoncpp
+
 
 ***CURRENTLY IN DEVELOPMENT***
 
