@@ -4,11 +4,13 @@ ofxPhillipsHue
 Open Frameworks addon to interface directly with the phillips hue wi-fi lightbulb http://meethue.com/
 
 
-Dependencies -
-
-ofxUI - https://github.com/rezaali/ofxUI‎
-MY httpUtils ( for PUT ) - https://github.com/benMcChesney/ofxHttpUtils
-
+***Warning***
+Using a Windows 64 bit 007 version of Open Frameworks
+Does not utulize the standard Open Frameworks addon directory structure 
 
 ***CURRENTLY IN DEVELOPMENT***
-Right now it's possible to get the light data but not set it.
+Forked from https://github.com/benMcChesney/ofxPhillipsHue
+
+Can both set and get Philips Hue bulb properties
+
+Needs cleaning up
