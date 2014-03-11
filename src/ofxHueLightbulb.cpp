@@ -42,7 +42,7 @@ ResponseData HttpHelper::doRequest(const std::string& method, const std::string&
 			httpSession->sendRequest(request);
 		}
 
-		// TODO: HTTP_PUT
+		// TODO: HTTP_POST
 
 		rs=&httpSession->receiveResponse(response);
 		session=ofPtr<Poco::Net::HTTPSession>(httpSession);
@@ -117,15 +117,20 @@ void ofxHueLightbulb::draw( float x , float y )
 	if (!drawDebug)
 		return;
 
-	ofSetColor( getAsOfColor() ) ;
-    float radius = 20 ;
-    ofCircle( x , y , radius ) ;
+	ofSetColor(getAsOfColor());
+    float radius=20;
+    ofCircle(x, y, radius);
 
-    ofSetColor( ofColor::black ) ;
+    ofSetColor(ofColor::black);
     stringstream ss ;
-	ss << state.isOn << " hue=="<< state.hue << " bri==" << state.brightness << " sat==" << state.saturation << endl ; 
-    ofDrawBitmapString( ss.str() , x , y - radius - 15 );//, ofColor::black , getOfxColor() ) ;
-	
+	ss  <<"name:"<<attributes.name<<endl
+		<<"on:"<<state.isOn<<endl
+		<<"hue:"<<state.hue
+		<<" brightness:"<<state.brightness
+		<<" saturation:"<<state.saturation 
+		<< endl; 
+
+    ofDrawBitmapString(ss.str(), x + radius*2, y);
 }
 
 void ofxHueLightbulb::handleResponse(ResponseData& evt)
@@ -181,7 +186,7 @@ ofxHueLightbulb& ofxHueLightbulb::begin()
 	return *this;
 }
 
-// WARNING: State and attribute objects are updated on call... if the request fails they will be out of sync with the bulbs
+// WARNING: State and attribute objects are currently updated on call... if the request fails they will be out of sync with the bulbs
 
 ofxHueLightbulb& ofxHueLightbulb::swapOnOff()
 {
